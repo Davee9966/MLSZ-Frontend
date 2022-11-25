@@ -1,0 +1,49 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col>
+        <c-card-group>
+          <c-card class="p-0">
+            <c-card-body class="p-0 px-5">
+              <c-container class="p-0 py-3 text-center">
+                <h5 class="text-dark">Elfelejtett jelszó</h5>
+                <p>
+                  Adja meg a regisztrációhoz használt email címét és küldünk
+                  Önnek egy új jelszót
+                </p>
+              </c-container>
+              <form cForm>
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilEnvelopeClosed"></svg>
+                  </span>
+                  <input
+                    autoComplete="email"
+                    cFormControl
+                    placeholder="Email"
+                    class="shadow-none"
+                  />
+                  <button
+                    cButton
+                    class="px-0 w-25 py-3 shadow-none"
+                    color="primary"
+                  >
+                    Küldés
+                  </button> </c-input-group
+                ><button
+                  cButton
+                  class="px-0 shadow-none mb-4"
+                  color="link"
+                  routerLink="/login"
+                >
+                  <svg cIcon name="cilChevronLeft"></svg>
+                  Vissza
+                </button>
+              </form>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

@@ -1,0 +1,77 @@
+<c-smart-table
+  [items]="this.users"
+  [columns]="columns"
+  [columnFilter]="true"
+  [columnSorter]="true"
+  [itemsPerPageSelect]="true"
+  [itemsPerPage]="20"
+  [tableFilter]="true"
+  tableFilterPlaceholder="kezdjen gépelni.."
+  tableFilterLabel="Univerzális szűrő: "
+  [tableBodyProps]="{ align: 'left' }"
+  [tableProps]="{ hover: true, striped: true, responsive: true }"
+  (selectedItemsChange)="checkSelected($event)"
+  (rowClick)="log($event)"
+  clickableRows
+  header
+  pagination
+  selectable
+>
+  <ng-template
+    cTemplateId="tableData"
+    let-columnName="columnName"
+    let-item="item"
+    let-tdContent="tdContent"
+  >
+    <td>
+      <ng-container [ngSwitch]="columnName">
+        <ng-container *ngSwitchCase="'status'">
+          <c-badge [color]="getBadge(tdContent)">
+            {{ item[columnName] }}
+          </c-badge>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          {{ tdContent }}
+        </ng-container>
+      </ng-container>
+    </td>
+  </ng-template>
+</c-smart-table>
+<div>
+  <button
+    class="mx-1"
+    [disabled]="!editDisabled()"
+    [cModalToggle]="staticBackdropModal.id"
+    (click)="modalUser()"
+    cButton
+    color="warning"
+  >
+    Edit
+  </button>
+  <button class="mx-1" cButton color="danger">Delete</button>
+</div>
+<c-modal #staticBackdropModal backdrop="static" id="staticBackdropModal">
+  <c-modal-header>
+    <h5 cModalTitle>Felhasználó rekord módosítása</h5>
+    <button [cModalToggle]="staticBackdropModal.id" cButtonClose></button>
+  </c-modal-header>
+  <c-modal-body>
+    <c-input-group class="flex-nowrap">
+      <span cInputGroupText id="addon-wrapping">@</span>
+      <input
+        aria-describedby="addon-wrapping"
+        aria-label="Name"
+        cFormControl
+        [placeholder]="
+          !!this.showUserOnModal ? this.showUserOnModal.name : null
+        "
+      />
+    </c-input-group>
+  </c-modal-body>
+  <c-modal-footer>
+    <button [cModalToggle]="staticBackdropModal.id" cButton color="secondary">
+      Bezár
+    </button>
+    <button cButton color="primary">Mentés</button>
+  </c-modal-footer>
+</c-modal>

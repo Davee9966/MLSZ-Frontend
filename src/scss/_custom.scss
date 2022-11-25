@@ -1,0 +1,18 @@
+// Here you can add other styles
+
+.nav-link {
+  a {
+  padding: 0px!important;
+  }
+    svg{
+      width: 0px !important;
+      display: none;
+    }
+    span{
+      width: 0px !important;
+      display:none;
+    }
+}
+.nav-group-items {
+  margin-left: -48px;
+}

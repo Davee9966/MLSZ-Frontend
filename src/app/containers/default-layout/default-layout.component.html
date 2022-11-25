@@ -1,0 +1,50 @@
+<!--sidebar-->
+<c-sidebar
+  #sidebar="cSidebar"
+  class="d-print-none sidebar sidebar-fixed"
+  id="sidebar"
+  visible
+>
+  <c-sidebar-header
+    style="padding-right: 60px; cursor: pointer"
+    class="d-flex justify-content-between"
+    (click)="logout()"
+  >
+    <c-sidebar-brand
+      class="rounded-circle"
+      [brandFull]="{
+        src: 'assets/img/brand/mlsz.svg',
+        width: 80,
+        height: 80,
+        alt: 'MLSZ Logo'
+      }"
+      position="start"
+    >
+    </c-sidebar-brand>
+    <span class="align-self-center justify-content-center">
+      <a> Kijelentkezés</a>
+    </span>
+  </c-sidebar-header>
+  <perfect-scrollbar [config]="perfectScrollbarConfig">
+    <!--  [perfectScrollbar]="perfectScrollbarConfig"-->
+    <c-sidebar-nav [navItems]="navItems"> </c-sidebar-nav>
+  </perfect-scrollbar>
+</c-sidebar>
+
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+  <!--app-header-->
+  <app-default-header
+    class="mb-4 d-print-none header header-sticky"
+    position="sticky"
+    sidebarId="sidebar"
+  ></app-default-header>
+  <!--app-body-->
+  <div class="body flex-grow-1 px-3">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet></router-outlet>
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer></app-default-footer>
+</div>
