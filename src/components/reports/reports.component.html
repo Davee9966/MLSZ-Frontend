@@ -1,0 +1,47 @@
+<div class="mb-5">
+  <table class="w-100" striped cTable hover>
+    <thead>
+      <tr>
+        <th>Riporok, statisztikák</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of archiveItems">
+        <div
+          class="p-2 row inline border-bottom-1 border-bottom-primary border-bottom"
+        >
+          <p class="mx-3 col-4">{{ item.name }}</p>
+          <select class="col-3" name="Megye" id="">
+            <option value="Nógrád">Nógrád</option>
+            <option value="">Nógrád</option>
+            <option value="">Nógrád</option>
+          </select>
+          <select class="mx-3 col" name="Évad" id="">
+            <option value="2022/2023">2022/2023</option>
+            <option value="">2022/2023</option>
+            <option value="">2022/2023</option>
+          </select>
+          <button class="mx-3 btn cButton col">Letöltés</button>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <p class="fw-bold">Adatvizualizáció</p>
+  <div class="col-6">
+    <p class="mb-5 sm-12">Munkatársak által ellenőrzött pályák száma</p>
+    <c-chart type="pie" [data]="data" [height]="200" [width]="500"> </c-chart>
+  </div>
+  <div class="col-6">
+    <p class="mb-5 sm-12">Jelenlegi évad készenléti állapota százalékban</p>
+    <c-chart
+      type="doughnut"
+      [plugins]="plugins"
+      [data]="data2"
+      [height]="200"
+      [width]="500"
+    >
+    </c-chart>
+  </div>
+</div>

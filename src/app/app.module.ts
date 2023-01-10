@@ -1,3 +1,5 @@
+import { ReportsComponent } from './../components/reports/reports.component';
+import { ChartjsModule } from '@coreui/angular-chartjs';
 import { UsersComponent } from './../components/users/users.component';
 import { SmartTablesModule } from './views/smart-tables/smart-tables.module';
 import { PagesModule } from './views/pages/pages.module';
@@ -79,7 +81,12 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, UsersComponent],
+  declarations: [
+    AppComponent,
+    ...APP_CONTAINERS,
+    UsersComponent,
+    ReportsComponent,
+  ],
   imports: [
     AppRoutingModule,
     AvatarModule,
@@ -91,7 +98,7 @@ const APP_CONTAINERS = [
     ButtonGroupModule,
     ButtonModule,
     ButtonsModule,
-    ChartsModule,
+    ChartjsModule,
     CoreUIFormsModule,
     CardModule,
     DashboardModule,

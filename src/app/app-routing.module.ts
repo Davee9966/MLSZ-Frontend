@@ -1,3 +1,4 @@
+import { ReportsComponent } from './../components/reports/reports.component';
 import { FieldsComponent } from './../components/fields/fields.component';
 import { UsersComponent } from './../components/users/users.component';
 import { AuthGuard } from './auth/auth.guard';
@@ -34,8 +35,13 @@ const routes: Routes = [
         path: 'palyak',
         component: FieldsComponent,
       },
+      {
+        path: 'riportok',
+        component: ReportsComponent,
+      },
     ],
   },
+
   {
     path: '404',
     component: Page404Component,

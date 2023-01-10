@@ -21,7 +21,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Riportok, statisztikák',
-    url: '/riportok',
+    url: 'riportok',
   },
   {
     name: 'Személyes adatok',

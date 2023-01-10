@@ -11,36 +11,7 @@ export class UsersComponent implements OnInit {
   users: Users[] = [];
   selectedItems = [];
   showUserOnModal: Users | any;
-  columns: any[] = [
-    {
-      key: 'id',
-      _style: { width: '5%' },
-    },
-    {
-      key: 'name',
-      _style: { width: '15%' },
-    },
-    {
-      key: 'email',
-      _style: { width: '20%' },
-    },
-    {
-      key: 'phone',
-      _style: { width: '15%' },
-    },
-    {
-      key: 'org',
-      _style: { width: '15%' },
-    },
-    {
-      key: 'position',
-      _style: { width: '15%' },
-    },
-    {
-      key: 'role',
-      _style: { width: '15%' },
-    },
-  ];
+  columns: any[] = ['id', 'name', 'email', 'phone', 'org', 'position', 'role'];
   constructor(private service: UsersService) {}
 
   ngAfterViewInit(): void {
